@@ -2,6 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from .models import ProfileModel
 
 
 class LoginForm(forms.Form):
@@ -76,6 +77,13 @@ class RegistrationForm(forms.Form):
         )
         return user
 
+"""
+def ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model=ProfileModel
+        fields=["user","DOB","gender",]
+
+"""
 
 # class GuestRegisterationForm(forms.Form):
 #     username = forms.CharField(max_length=50, required=True)
